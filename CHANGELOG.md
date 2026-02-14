@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.0.4 (2026-02-14)
+
+Full Changelog: [v0.0.3...v0.0.4](https://github.com/Midbound/cloud-sdk-python/compare/v0.0.3...v0.0.4)
+
+### Chores
+
+* update SDK settings ([4931289](https://github.com/Midbound/cloud-sdk-python/commit/4931289c071b508236c8ab6a54bfb1889b447048))
+* update SDK settings ([fba3263](https://github.com/Midbound/cloud-sdk-python/commit/fba32638fb12acb1ac0daeae83702099c39b5f69))
+
 ## 0.0.3 (2026-02-14)
 
 Full Changelog: [v0.0.2...v0.0.3](https://github.com/Midbound/cloud-sdk-python/compare/v0.0.2...v0.0.3)
