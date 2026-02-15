@@ -1,6 +1,5 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-from typing import Optional
 from datetime import datetime
 from typing_extensions import Literal
 
@@ -18,6 +17,3 @@ class HealthCheckResponse(BaseModel):
 
     version: str
     """API version"""
-
-    service: Optional[str] = None
-    """Service name"""
