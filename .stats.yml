@@ -1,4 +1,4 @@
 configured_endpoints: 1
 openapi_spec_url: https://storage.googleapis.com/stainless-sdk-openapi-specs/midbound-inc%2Fmidbound-cloud-60be7695e904108fc69ce5d281e53ee0e6c61dc4f0a009e880ef36a0ecc79bfb.yml
 openapi_spec_hash: db93ea863dfb02e1e8c90101bd79f0a2
-config_hash: b00a49d19c7779985c3c42b1096bcae7
+config_hash: f6e794ff2077e05c3fae50b8644b4619
