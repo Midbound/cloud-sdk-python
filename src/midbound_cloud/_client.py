@@ -34,6 +34,7 @@ from ._base_client import (
 if TYPE_CHECKING:
     from .resources import health
     from .resources.health import HealthResource, AsyncHealthResource
+    from .resources.webhooks import WebhooksResource, AsyncWebhooksResource
 
 __all__ = [
     "ENVIRONMENTS",
@@ -133,6 +134,12 @@ class MidboundCloud(SyncAPIClient):
         from .resources.health import HealthResource
 
         return HealthResource(self)
+
+    @cached_property
+    def webhooks(self) -> WebhooksResource:
+        from .resources.webhooks import WebhooksResource
+
+        return WebhooksResource(self)
 
     @cached_property
     def with_raw_response(self) -> MidboundCloudWithRawResponse:
@@ -340,6 +347,12 @@ class AsyncMidboundCloud(AsyncAPIClient):
         from .resources.health import AsyncHealthResource
 
         return AsyncHealthResource(self)
+
+    @cached_property
+    def webhooks(self) -> AsyncWebhooksResource:
+        from .resources.webhooks import AsyncWebhooksResource
+
+        return AsyncWebhooksResource(self)
 
     @cached_property
     def with_raw_response(self) -> AsyncMidboundCloudWithRawResponse:
