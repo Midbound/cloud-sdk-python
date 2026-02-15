@@ -57,6 +57,7 @@ ENVIRONMENTS: Dict[str, str] = {
 class MidboundCloud(SyncAPIClient):
     # client options
     api_key: str | None
+    webhook_secret: str | None
 
     _environment: Literal["production", "environment_1"] | NotGiven
 
@@ -64,6 +65,7 @@ class MidboundCloud(SyncAPIClient):
         self,
         *,
         api_key: str | None = None,
+        webhook_secret: str | None = None,
         environment: Literal["production", "environment_1"] | NotGiven = not_given,
         base_url: str | httpx.URL | None | NotGiven = not_given,
         timeout: float | Timeout | None | NotGiven = not_given,
@@ -86,11 +88,17 @@ class MidboundCloud(SyncAPIClient):
     ) -> None:
         """Construct a new synchronous MidboundCloud client instance.
 
-        This automatically infers the `api_key` argument from the `MIDBOUND_CLOUD_API_KEY` environment variable if it is not provided.
+        This automatically infers the following arguments from their corresponding environment variables if they are not provided:
+        - `api_key` from `MIDBOUND_CLOUD_API_KEY`
+        - `webhook_secret` from `MIDBOUND_CLOUD_WEBHOOK_SECRET`
         """
         if api_key is None:
             api_key = os.environ.get("MIDBOUND_CLOUD_API_KEY")
         self.api_key = api_key
+
+        if webhook_secret is None:
+            webhook_secret = os.environ.get("MIDBOUND_CLOUD_WEBHOOK_SECRET")
+        self.webhook_secret = webhook_secret
 
         self._environment = environment
 
@@ -184,6 +192,7 @@ class MidboundCloud(SyncAPIClient):
         self,
         *,
         api_key: str | None = None,
+        webhook_secret: str | None = None,
         environment: Literal["production", "environment_1"] | None = None,
         base_url: str | httpx.URL | None = None,
         timeout: float | Timeout | None | NotGiven = not_given,
@@ -219,6 +228,7 @@ class MidboundCloud(SyncAPIClient):
         http_client = http_client or self._client
         return self.__class__(
             api_key=api_key or self.api_key,
+            webhook_secret=webhook_secret or self.webhook_secret,
             base_url=base_url or self.base_url,
             environment=environment or self._environment,
             timeout=self.timeout if isinstance(timeout, NotGiven) else timeout,
@@ -270,6 +280,7 @@ class MidboundCloud(SyncAPIClient):
 class AsyncMidboundCloud(AsyncAPIClient):
     # client options
     api_key: str | None
+    webhook_secret: str | None
 
     _environment: Literal["production", "environment_1"] | NotGiven
 
@@ -277,6 +288,7 @@ class AsyncMidboundCloud(AsyncAPIClient):
         self,
         *,
         api_key: str | None = None,
+        webhook_secret: str | None = None,
         environment: Literal["production", "environment_1"] | NotGiven = not_given,
         base_url: str | httpx.URL | None | NotGiven = not_given,
         timeout: float | Timeout | None | NotGiven = not_given,
@@ -299,11 +311,17 @@ class AsyncMidboundCloud(AsyncAPIClient):
     ) -> None:
         """Construct a new async AsyncMidboundCloud client instance.
 
-        This automatically infers the `api_key` argument from the `MIDBOUND_CLOUD_API_KEY` environment variable if it is not provided.
+        This automatically infers the following arguments from their corresponding environment variables if they are not provided:
+        - `api_key` from `MIDBOUND_CLOUD_API_KEY`
+        - `webhook_secret` from `MIDBOUND_CLOUD_WEBHOOK_SECRET`
         """
         if api_key is None:
             api_key = os.environ.get("MIDBOUND_CLOUD_API_KEY")
         self.api_key = api_key
+
+        if webhook_secret is None:
+            webhook_secret = os.environ.get("MIDBOUND_CLOUD_WEBHOOK_SECRET")
+        self.webhook_secret = webhook_secret
 
         self._environment = environment
 
@@ -397,6 +415,7 @@ class AsyncMidboundCloud(AsyncAPIClient):
         self,
         *,
         api_key: str | None = None,
+        webhook_secret: str | None = None,
         environment: Literal["production", "environment_1"] | None = None,
         base_url: str | httpx.URL | None = None,
         timeout: float | Timeout | None | NotGiven = not_given,
@@ -432,6 +451,7 @@ class AsyncMidboundCloud(AsyncAPIClient):
         http_client = http_client or self._client
         return self.__class__(
             api_key=api_key or self.api_key,
+            webhook_secret=webhook_secret or self.webhook_secret,
             base_url=base_url or self.base_url,
             environment=environment or self._environment,
             timeout=self.timeout if isinstance(timeout, NotGiven) else timeout,
