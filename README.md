@@ -30,6 +30,8 @@ from midbound_cloud import MidboundCloud
 
 client = MidboundCloud(
     api_key=os.environ.get("MIDBOUND_CLOUD_API_KEY"),  # This is the default and can be omitted
+    # defaults to "production".
+    environment="environment_1",
 )
 
 response = client.health.check()
@@ -52,6 +54,8 @@ from midbound_cloud import AsyncMidboundCloud
 
 client = AsyncMidboundCloud(
     api_key=os.environ.get("MIDBOUND_CLOUD_API_KEY"),  # This is the default and can be omitted
+    # defaults to "production".
+    environment="environment_1",
 )
 
 
