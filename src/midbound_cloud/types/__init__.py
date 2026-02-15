@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from .unwrap_webhook_event import UnwrapWebhookEvent as UnwrapWebhookEvent
 from .health_check_response import HealthCheckResponse as HealthCheckResponse
+from .unwrap_unsafe_webhook_event import UnwrapUnsafeWebhookEvent as UnwrapUnsafeWebhookEvent
 from .identity_enriched_webhook_event import IdentityEnrichedWebhookEvent as IdentityEnrichedWebhookEvent
 from .identity_resolved_webhook_event import IdentityResolvedWebhookEvent as IdentityResolvedWebhookEvent
 from .identity_qualified_webhook_event import IdentityQualifiedWebhookEvent as IdentityQualifiedWebhookEvent

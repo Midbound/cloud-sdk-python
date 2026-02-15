@@ -21,6 +21,12 @@ from midbound_cloud.types import (
     IdentityEnrichedWebhookEvent,
     IdentityValidatedWebhookEvent,
     IdentitySessionFinalizedWebhookEvent,
+    IdentityResolvedWebhookEvent,
+    IdentityQualifiedWebhookEvent,
+    IdentityEnrichedWebhookEvent,
+    IdentityValidatedWebhookEvent,
+    IdentitySessionFinalizedWebhookEvent,
     UnwrapWebhookEvent,
+    UnwrapUnsafeWebhookEvent,
 )
 ```

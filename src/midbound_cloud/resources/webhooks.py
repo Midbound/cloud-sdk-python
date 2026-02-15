@@ -8,6 +8,7 @@ from typing import cast
 from .._models import construct_type
 from .._resource import SyncAPIResource, AsyncAPIResource
 from ..types.unwrap_webhook_event import UnwrapWebhookEvent
+from ..types.unwrap_unsafe_webhook_event import UnwrapUnsafeWebhookEvent
 
 __all__ = ["WebhooksResource", "AsyncWebhooksResource"]
 
@@ -22,6 +23,15 @@ class WebhooksResource(SyncAPIResource):
             ),
         )
 
+    def unwrap_unsafe(self, payload: str) -> UnwrapUnsafeWebhookEvent:
+        return cast(
+            UnwrapUnsafeWebhookEvent,
+            construct_type(
+                type_=UnwrapUnsafeWebhookEvent,
+                value=json.loads(payload),
+            ),
+        )
+
 
 class AsyncWebhooksResource(AsyncAPIResource):
     def unwrap(self, payload: str) -> UnwrapWebhookEvent:
@@ -29,6 +39,15 @@ class AsyncWebhooksResource(AsyncAPIResource):
             UnwrapWebhookEvent,
             construct_type(
                 type_=UnwrapWebhookEvent,
+                value=json.loads(payload),
+            ),
+        )
+
+    def unwrap_unsafe(self, payload: str) -> UnwrapUnsafeWebhookEvent:
+        return cast(
+            UnwrapUnsafeWebhookEvent,
+            construct_type(
+                type_=UnwrapUnsafeWebhookEvent,
                 value=json.loads(payload),
             ),
         )
