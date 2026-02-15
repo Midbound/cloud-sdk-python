@@ -704,6 +704,18 @@ class TestMidboundCloud:
             client = MidboundCloud(api_key=api_key, _strict_response_validation=True)
             assert client.base_url == "http://localhost:5000/from/env/"
 
+        # explicit environment arg requires explicitness
+        with update_env(MIDBOUND_CLOUD_BASE_URL="http://localhost:5000/from/env"):
+            with pytest.raises(ValueError, match=r"you must pass base_url=None"):
+                MidboundCloud(api_key=api_key, _strict_response_validation=True, environment="production")
+
+            client = MidboundCloud(
+                base_url=None, api_key=api_key, _strict_response_validation=True, environment="production"
+            )
+            assert str(client.base_url).startswith("https://staging.api.midbound.cloud")
+
+            client.close()
+
     @pytest.mark.parametrize(
         "client",
         [
@@ -1611,6 +1623,18 @@ class TestAsyncMidboundCloud:
         with update_env(MIDBOUND_CLOUD_BASE_URL="http://localhost:5000/from/env"):
             client = AsyncMidboundCloud(api_key=api_key, _strict_response_validation=True)
             assert client.base_url == "http://localhost:5000/from/env/"
+
+        # explicit environment arg requires explicitness
+        with update_env(MIDBOUND_CLOUD_BASE_URL="http://localhost:5000/from/env"):
+            with pytest.raises(ValueError, match=r"you must pass base_url=None"):
+                AsyncMidboundCloud(api_key=api_key, _strict_response_validation=True, environment="production")
+
+            client = AsyncMidboundCloud(
+                base_url=None, api_key=api_key, _strict_response_validation=True, environment="production"
+            )
+            assert str(client.base_url).startswith("https://staging.api.midbound.cloud")
+
+            await client.close()
 
     @pytest.mark.parametrize(
         "client",
