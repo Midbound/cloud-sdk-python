@@ -13,7 +13,7 @@ class HealthCheckResponse(BaseModel):
     """Service health status"""
 
     timestamp: datetime
-    """Current server timestamp"""
+    """Current server timestamp (ISO)"""
 
     version: str
     """API version"""
