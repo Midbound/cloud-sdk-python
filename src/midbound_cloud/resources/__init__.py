@@ -8,6 +8,7 @@ from .health import (
     HealthResourceWithStreamingResponse,
     AsyncHealthResourceWithStreamingResponse,
 )
+from .webhooks import WebhooksResource, AsyncWebhooksResource
 
 __all__ = [
     "HealthResource",
@@ -16,4 +17,6 @@ __all__ = [
     "AsyncHealthResourceWithRawResponse",
     "HealthResourceWithStreamingResponse",
     "AsyncHealthResourceWithStreamingResponse",
+    "WebhooksResource",
+    "AsyncWebhooksResource",
 ]
