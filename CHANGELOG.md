@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.3.0 (2026-02-20)
+
+Full Changelog: [v0.2.0...v0.3.0](https://github.com/Midbound/cloud-sdk-python/compare/v0.2.0...v0.3.0)
+
+### Features
+
+* **api:** api update ([f8c444e](https://github.com/Midbound/cloud-sdk-python/commit/f8c444e4b82dadec774ee7e71d8d1252d9ea716d))
+* **api:** api update ([4ef5a0b](https://github.com/Midbound/cloud-sdk-python/commit/4ef5a0b8c0288672011d972445c2af0ed0f9b92d))
+
+
+### Chores
+
+* **internal:** remove mock server code ([712f0af](https://github.com/Midbound/cloud-sdk-python/commit/712f0af491e973c3d9558cd554e6358a61a05c93))
+* update mock server docs ([a075a5e](https://github.com/Midbound/cloud-sdk-python/commit/a075a5ee2b638b084c2dabb5b528104779e95757))
+
 ## 0.2.0 (2026-02-15)
 
 Full Changelog: [v0.1.0...v0.2.0](https://github.com/Midbound/cloud-sdk-python/compare/v0.1.0...v0.2.0)
