@@ -1,7 +1,6 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 from typing import Dict, List, Optional
-from datetime import datetime
 from typing_extensions import Literal
 
 from pydantic import Field as FieldInfo
@@ -193,10 +192,13 @@ class Data(BaseModel):
 
 
 class IdentityResolvedWebhookEvent(BaseModel):
-    data: Data
+    id: str
+    """Unique event identifier"""
 
-    timestamp: datetime
-    """When the event was generated"""
+    created: int
+    """Unix timestamp (milliseconds) when the event was created"""
+
+    data: Data
 
     type: Literal["identity.resolved"]
     """Event type identifier"""
