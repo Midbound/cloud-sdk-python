@@ -139,6 +139,7 @@ class MidboundCloud(SyncAPIClient):
 
     @cached_property
     def health(self) -> HealthResource:
+        """Health check endpoints"""
         from .resources.health import HealthResource
 
         return HealthResource(self)
@@ -362,6 +363,7 @@ class AsyncMidboundCloud(AsyncAPIClient):
 
     @cached_property
     def health(self) -> AsyncHealthResource:
+        """Health check endpoints"""
         from .resources.health import AsyncHealthResource
 
         return AsyncHealthResource(self)
@@ -508,6 +510,7 @@ class MidboundCloudWithRawResponse:
 
     @cached_property
     def health(self) -> health.HealthResourceWithRawResponse:
+        """Health check endpoints"""
         from .resources.health import HealthResourceWithRawResponse
 
         return HealthResourceWithRawResponse(self._client.health)
@@ -521,6 +524,7 @@ class AsyncMidboundCloudWithRawResponse:
 
     @cached_property
     def health(self) -> health.AsyncHealthResourceWithRawResponse:
+        """Health check endpoints"""
         from .resources.health import AsyncHealthResourceWithRawResponse
 
         return AsyncHealthResourceWithRawResponse(self._client.health)
@@ -534,6 +538,7 @@ class MidboundCloudWithStreamedResponse:
 
     @cached_property
     def health(self) -> health.HealthResourceWithStreamingResponse:
+        """Health check endpoints"""
         from .resources.health import HealthResourceWithStreamingResponse
 
         return HealthResourceWithStreamingResponse(self._client.health)
@@ -547,6 +552,7 @@ class AsyncMidboundCloudWithStreamedResponse:
 
     @cached_property
     def health(self) -> health.AsyncHealthResourceWithStreamingResponse:
+        """Health check endpoints"""
         from .resources.health import AsyncHealthResourceWithStreamingResponse
 
         return AsyncHealthResourceWithStreamingResponse(self._client.health)
