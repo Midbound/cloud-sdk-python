@@ -1,5 +1,37 @@
 # Changelog
 
+## 0.4.0 (2026-03-27)
+
+Full Changelog: [v0.3.0...v0.4.0](https://github.com/Midbound/cloud-sdk-python/compare/v0.3.0...v0.4.0)
+
+### Features
+
+* **api:** api update ([a531c56](https://github.com/Midbound/cloud-sdk-python/commit/a531c569a3ef667397b8cf56f58b38f8e1f981df))
+* **internal:** implement indices array format for query and form serialization ([b89ee20](https://github.com/Midbound/cloud-sdk-python/commit/b89ee20a1be3d17df7fa5d015e7ee487d7e91600))
+
+
+### Bug Fixes
+
+* **deps:** bump minimum typing-extensions version ([2c29c75](https://github.com/Midbound/cloud-sdk-python/commit/2c29c75d50a6482dc1f38f45a03b588ecc3c7963))
+* **pydantic:** do not pass `by_alias` unless set ([62e9450](https://github.com/Midbound/cloud-sdk-python/commit/62e9450fb66e1ec46100b959d3cb4c5d79b9dbb9))
+* sanitize endpoint path params ([e6a153c](https://github.com/Midbound/cloud-sdk-python/commit/e6a153c0fa730aa47647180f043ee6ad15f5617f))
+
+
+### Chores
+
+* **ci:** bump uv version ([8aac007](https://github.com/Midbound/cloud-sdk-python/commit/8aac0073dfffc62a710cbf47c11a3c406718c3f5))
+* **ci:** skip lint on metadata-only changes ([8d69dcd](https://github.com/Midbound/cloud-sdk-python/commit/8d69dcd3adf4bc09c1bbf990dc179a5da7a1f05a))
+* **ci:** skip uploading artifacts on stainless-internal branches ([3d7bf8b](https://github.com/Midbound/cloud-sdk-python/commit/3d7bf8b77f2b41239695deab071b663f5bdcad86))
+* **dependencies:** require standardwebhooks 1.0.1 ([ae3f965](https://github.com/Midbound/cloud-sdk-python/commit/ae3f9654208386fa89d8265fee12d746b6cb883a))
+* **internal:** add request options to SSE classes ([cc60ab9](https://github.com/Midbound/cloud-sdk-python/commit/cc60ab9eda5d42aac93b6590dd90f957dad2114b))
+* **internal:** codegen related update ([ac3b1bc](https://github.com/Midbound/cloud-sdk-python/commit/ac3b1bc3356de67786f4d780c354553e6f55fd08))
+* **internal:** make `test_proxy_environment_variables` more resilient ([e381350](https://github.com/Midbound/cloud-sdk-python/commit/e381350a5a5285183d35cd712c1e5cf62905a372))
+* **internal:** make `test_proxy_environment_variables` more resilient to env ([59a3e58](https://github.com/Midbound/cloud-sdk-python/commit/59a3e58cf7113621a96faec214255b4992ebcece))
+* **internal:** refactor authentication internals ([2d8511a](https://github.com/Midbound/cloud-sdk-python/commit/2d8511a1865f35ceb482a88ef60e1b5c769f7536))
+* **internal:** tweak CI branches ([b20aacd](https://github.com/Midbound/cloud-sdk-python/commit/b20aacd8faf9ba2fe9192ae840d2e358f1eb90a5))
+* **internal:** update gitignore ([35aad80](https://github.com/Midbound/cloud-sdk-python/commit/35aad809646b6c5f72443d0f3d45b10f6340382e))
+* **tests:** update webhook tests ([ca2ede7](https://github.com/Midbound/cloud-sdk-python/commit/ca2ede7957e8b7835df238989024de132ad30881))
+
 ## 0.3.0 (2026-02-22)
 
 Full Changelog: [v0.2.0...v0.3.0](https://github.com/Midbound/cloud-sdk-python/compare/v0.2.0...v0.3.0)
