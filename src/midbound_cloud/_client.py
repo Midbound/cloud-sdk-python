@@ -22,6 +22,7 @@ from ._types import (
 )
 from ._utils import is_given, get_async_library
 from ._compat import cached_property
+from ._models import SecurityOptions
 from ._version import __version__
 from ._streaming import Stream as Stream, AsyncStream as AsyncStream
 from ._exceptions import APIStatusError
@@ -139,6 +140,7 @@ class MidboundCloud(SyncAPIClient):
 
     @cached_property
     def health(self) -> HealthResource:
+        """Health check endpoints"""
         from .resources.health import HealthResource
 
         return HealthResource(self)
@@ -162,9 +164,14 @@ class MidboundCloud(SyncAPIClient):
     def qs(self) -> Querystring:
         return Querystring(array_format="comma")
 
-    @property
     @override
-    def auth_headers(self) -> dict[str, str]:
+    def _auth_headers(self, security: SecurityOptions) -> dict[str, str]:
+        return {
+            **(self._bearer_auth if security.get("bearer_auth", False) else {}),
+        }
+
+    @property
+    def _bearer_auth(self) -> dict[str, str]:
         api_key = self.api_key
         if api_key is None:
             return {}
@@ -362,6 +369,7 @@ class AsyncMidboundCloud(AsyncAPIClient):
 
     @cached_property
     def health(self) -> AsyncHealthResource:
+        """Health check endpoints"""
         from .resources.health import AsyncHealthResource
 
         return AsyncHealthResource(self)
@@ -385,9 +393,14 @@ class AsyncMidboundCloud(AsyncAPIClient):
     def qs(self) -> Querystring:
         return Querystring(array_format="comma")
 
-    @property
     @override
-    def auth_headers(self) -> dict[str, str]:
+    def _auth_headers(self, security: SecurityOptions) -> dict[str, str]:
+        return {
+            **(self._bearer_auth if security.get("bearer_auth", False) else {}),
+        }
+
+    @property
+    def _bearer_auth(self) -> dict[str, str]:
         api_key = self.api_key
         if api_key is None:
             return {}
@@ -508,6 +521,7 @@ class MidboundCloudWithRawResponse:
 
     @cached_property
     def health(self) -> health.HealthResourceWithRawResponse:
+        """Health check endpoints"""
         from .resources.health import HealthResourceWithRawResponse
 
         return HealthResourceWithRawResponse(self._client.health)
@@ -521,6 +535,7 @@ class AsyncMidboundCloudWithRawResponse:
 
     @cached_property
     def health(self) -> health.AsyncHealthResourceWithRawResponse:
+        """Health check endpoints"""
         from .resources.health import AsyncHealthResourceWithRawResponse
 
         return AsyncHealthResourceWithRawResponse(self._client.health)
@@ -534,6 +549,7 @@ class MidboundCloudWithStreamedResponse:
 
     @cached_property
     def health(self) -> health.HealthResourceWithStreamingResponse:
+        """Health check endpoints"""
         from .resources.health import HealthResourceWithStreamingResponse
 
         return HealthResourceWithStreamingResponse(self._client.health)
@@ -547,6 +563,7 @@ class AsyncMidboundCloudWithStreamedResponse:
 
     @cached_property
     def health(self) -> health.AsyncHealthResourceWithStreamingResponse:
+        """Health check endpoints"""
         from .resources.health import AsyncHealthResourceWithStreamingResponse
 
         return AsyncHealthResourceWithStreamingResponse(self._client.health)
