@@ -25,7 +25,7 @@ __all__ = [
 class DataAttribution(BaseModel):
     pixel_id: str = FieldInfo(alias="pixelId")
 
-    prid: Literal["jNNdd", "OMzN4"]
+    prid: Literal["jNNdd", "OMzN4", "z3xL1"]
 
     session_id: str = FieldInfo(alias="sessionId")
 
