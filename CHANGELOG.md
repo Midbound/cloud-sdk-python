@@ -1,5 +1,34 @@
 # Changelog
 
+## 0.5.0 (2026-05-13)
+
+Full Changelog: [v0.4.0...v0.5.0](https://github.com/Midbound/cloud-sdk-python/compare/v0.4.0...v0.5.0)
+
+### Features
+
+* **api:** api update ([2791b54](https://github.com/Midbound/cloud-sdk-python/commit/2791b54c0b3e33a31c45002c00cd096e184d66eb))
+* **internal/types:** support eagerly validating pydantic iterators ([3d39097](https://github.com/Midbound/cloud-sdk-python/commit/3d390976df9ad4a90b781ec9cf7c1679e90815e8))
+* support setting headers via env ([00e752d](https://github.com/Midbound/cloud-sdk-python/commit/00e752d2889ebe5da584b5a7f741050c7780fb5e))
+
+
+### Bug Fixes
+
+* **client:** add missing f-string prefix in file type error message ([6790398](https://github.com/Midbound/cloud-sdk-python/commit/6790398c9f84dc06f1830256ed27477c8387a827))
+* **client:** preserve hardcoded query params when merging with user params ([e686e91](https://github.com/Midbound/cloud-sdk-python/commit/e686e91cc03da418be0c5af50dff4a54b34ed642))
+* ensure file data are only sent as 1 parameter ([a1b8e4c](https://github.com/Midbound/cloud-sdk-python/commit/a1b8e4cab99d8ff9de3c3dda49e4a13182358ff6))
+* use correct field name format for multipart file arrays ([1ed5c6b](https://github.com/Midbound/cloud-sdk-python/commit/1ed5c6b71c9559a3bac351164759efdbc7b76dc5))
+
+
+### Performance Improvements
+
+* **client:** optimize file structure copying in multipart requests ([444e6ef](https://github.com/Midbound/cloud-sdk-python/commit/444e6efc1f43e14897e60d5aa66383742e215623))
+
+
+### Chores
+
+* **internal:** more robust bootstrap script ([8d180df](https://github.com/Midbound/cloud-sdk-python/commit/8d180df54b7c59131bf04c834b24a9c03990a584))
+* **internal:** reformat pyproject.toml ([3b57078](https://github.com/Midbound/cloud-sdk-python/commit/3b57078a4258b3d00c425c187e43e0bb957a7c3d))
+
 ## 0.4.0 (2026-03-27)
 
 Full Changelog: [v0.3.0...v0.4.0](https://github.com/Midbound/cloud-sdk-python/compare/v0.3.0...v0.4.0)
